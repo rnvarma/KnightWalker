@@ -1,9 +1,10 @@
 
-function initialize(fromX, fromY, toX, toY, id) {
+function initialize(fromX, fromY, toX, toY, id, description) {
     console.log(fromX)
     console.log(fromY)
     console.log(toX)
     console.log(toY)
+    console.log(description)
     var centerX = (fromX + toX)/2;
     var centerY = (fromY + toY)/2;
     var fromLatlng = new google.maps.LatLng(fromX, fromY);
@@ -55,7 +56,7 @@ $(document).ready(function() {
         destLat = $(this).attr("data-destlat")
         destLon = $(this).attr("data-destlon")
         id = $(this).attr("data-id")
-        initialize(startLat, startLon, destLat, destLon, id);
+        initialize(startLat, startLon, destLat, destLon, id, description);
     })
 })
 
