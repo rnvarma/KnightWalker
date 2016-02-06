@@ -6,3 +6,6 @@ from backend.models import *
 class HomePage(View):
 	def get(self, request):
 		return render(request, 'index.html')
+
+	def trip(self,request):
+		return render(request, 'trip.html')
