@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% load staticfiles %}
   <head>
     <script src="http://maps.googleapis.com/maps/api/js"></script>
+    
     <script>
+    
         function send(){
             var x = document.getElementById("join");
             x.disabled = true;
@@ -42,28 +45,30 @@
         }
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <link href="{% static 'css/trip.css'%}" rel="stylesheet" media="screen">
+    <link href="{% static 'css/rating.css'%}" rel="stylesheet">
+
     </head>
   <body>
-    <div class = 'Time'>         
-        <h2>FEB 5, 2016, 11:00 PM</h2>
-    </div>
-    <div>
-        From: Carnegie Mellon University
-    </div>              
-    <div>
-        To: University of Pittsburgh
-    </div>
-    <div id="googleMap" style="width:500px;height:380px;"></div>
-    <div>
-        rating: * * * * *
+    <div class="stars" style="z-index:0 !important;"></div>
+    <div class="twinkling" style="z-index:0 !important;"></div> 
+    <div id = "body">
+    <form id="msform">
+    <div style="z-index:1">
+        <h2 class = 'title'>FEB 5, 2016, 11:00 PM</h2>
+        <div class = 'subtitle'>From: Carnegie Mellon University</div>              
+        <div class = 'subtitle'>To: University of Pittsburgh</div>
+        <div id="googleMap" style="height:650px;"></div>
+        <div class="rating">
+           <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+        </div>
+        <!-- <div class = 'subtitle'>rating: * * * * *</div>   -->
+        <div class = 'subtitle'>Creator: emmazzz</div>
+        <div class = 'subtitle'>3 people in group</div>
+        <button type="button" id="join" onclick="send()" class = 'action-button'>JOIN!</button>
     </div>  
-    <div>
-        Creator: emmazzz
-    </div>
-    <div>
-        3 people in group
-    </div>
-    <button type="button" id="join" onclick="send()">JOIN!</button>
+    </form>
+    </div>  
     <!-- <a href="#" class="join-btn btn btn-default"><i class="fa fa-google-plus"></i>JOIN!</a></li> -->
   </body>
 </html>
