@@ -1,0 +1,22 @@
+<html>
+	{% load staticfiles %}
+	<head>
+		<link href="{% static 'css/index.css' %}" rel="stylesheet">
+	</head>
+
+	<body>
+		{% for post in posts %}
+			<div class="post">
+				<div class="creator-name">
+					{{ post.creator }}
+				</div>
+				<div class="message">
+					{{ post.message }}
+				</div>
+				<div class="num-likes">
+					{{ post.num_likes }}
+				</div>
+			</div>
+		{% endfor %}
+	</body>
+</html>

@@ -1,0 +1,11 @@
+
+.post {
+	color: red;
+	background-color: black;
+    padding: 10px;
+    margin: 5px;
+}
+
+#firstpost {
+	background-color: blue;
+}
