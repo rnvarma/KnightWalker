@@ -5,7 +5,7 @@ from backend.models import *
 
 class HomePage(View):
 	def get(self, request):
-				user = request.user
+		user = request.user
 		if not UserData.objects.filter(user=user).count():
 			email = user.email
 			andrewID = email.split("@")[0]
@@ -16,7 +16,7 @@ class HomePage(View):
 
 class WhereToGoPage(View):
 	def get(self, request):
-		return render(request, 'where_to_go_1.0.html')
+		return render(request, 'where_to_go_3.0.html')
 
 class Login(View):
 	def get(self, request):
