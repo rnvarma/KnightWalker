@@ -27,4 +27,5 @@ urlpatterns = [
     url(r'^trip$', TripPage.as_view()),
     url(r'where_to_go', WhereToGoPage.as_view()),
     url(r'recommendList', RecommendList.as_view()),
+    url(r'chat', Chat.as_view()),
 ]
