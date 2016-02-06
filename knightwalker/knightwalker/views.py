@@ -39,3 +39,30 @@ class WhereToGoPage(View):
 class Login(View):
 	def get(self, request):
 		return render(request, 'login.html')
+
+class RecommendList(View):
+	def get(self, request):
+		trips = Trip.objects.all()
+		trips_data = []
+		for trip in trips:
+			data = {}
+			data["creator"] = trip.creator
+			data["start_lon"] = trip.start_lon
+			data["start_lat"] = trip.start_lat
+			data["dest_lat"] = trip.dest_lat
+			data["dest_lon"] = trip.dest_lon
+			data["description"] = trip.description
+			data["start_time"] = trip.departure_time
+			data["id"] = trip.id
+			# data["attendees"] = trip.attendees
+			trips_data.append(data)
+		context = {}
+		context["trip_list"] = trips_data
+		return render(request, 'recommendList.html', context)
+
+
+
+
+
+
+
