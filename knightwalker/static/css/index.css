@@ -116,3 +116,11 @@ body {
   -webkit-animation:move-twink-back 200s linear infinite;
   animation:move-twink-back 200s linear infinite;
 }
+
+
+h1 {
+  font: 300 75px/1.5 'Pacifico', Helvetica, sans-serif;
+  color: #f0ffff;
+  text-align: center;
+  text-shadow: 3px 3px 0px rgba(0,0,0,0.1), 4px 4px 0px rgba(0,0,0,0.05);
+}
