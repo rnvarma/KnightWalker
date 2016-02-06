@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        var startLat = 40.444663;
+        var startLng = -79.945039;
+        var from = new google.maps.LatLng(startLat,startLng);
+        var destLat = 40.4444;
+        var destLng = -79.9608;
+        var to = new google.maps.LatLng(destLat,destLng);
+        var centerLat = (startLat + destLat)/2;
+        var centerLng = (startLng + destLng)/2;
+        var center = new google.maps.LatLng(centerLat,centerLng); 
+        function initialize() {
+            var mapProp = {
+            center:center,
+            zoom:15,
+            mapTypeId:google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+        
+        var start = new google.maps.Marker({
+            position:from,
+            title:'From'
+        });
+        var dest = new google.maps.Marker({
+            position:to,
+            title:'To'
+        });
+        start.setMap(map);
+        dest.setMap(map);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    </head>
+  <body>
+    <div id="greywrap">
+        <div class="row">
+            <div class="col-lg-4 callout">
+                <span class="icon icon-stack"></span>
+                   <h2>FEB 5, 2016, 11:00 PM</h2>
+                </div>
+                <div id="googleMap" style="width:500px;height:380px;"></div>  
+                <div class="col-lg-4 callout">
+                    <span class="icon icon-eye"></span>
+                    <h2>From: Carnegie Mellon University</h2>
+                </div>
+                
+                <div class="col-lg-4 callout">
+                    <span class="icon icon-heart"></span>
+                    <h2>To: University of Pittsburgh</h2>
+                </div>
+            </div>
+        </div>
+  </body>
+</html>
+
+
+</html>
