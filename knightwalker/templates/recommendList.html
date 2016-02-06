@@ -1,0 +1,103 @@
+<html lang="en">
+	<head>
+		<script src="http://maps.googleapis.com/maps/api/js"></script>
+	    <script>
+            var fromX = 40.4433;
+            var fromY = -79.9436;
+            var toX = 40.4436;
+            var toY = -79.9506;
+            var centerX = (fromX + toX)/2;
+            var centerY = (fromY + toY)/2;
+            var fromLatlng = new google.maps.LatLng(fromX, fromY);
+            var toLatlng = new google.maps.LatLng(toX, toY);
+            var labels = 'AB';
+            function initialize() {
+                var mapProp = {
+                    center:new google.maps.LatLng(centerX, centerY),
+                    zoom:15,
+                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                };
+                var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	        	var fromMarker = new google.maps.Marker({
+    				position: fromLatlng,
+    				title: "Meetup Position",
+                    label: labels[0]
+				});
+				var toMarker = new google.maps.Marker({
+    				position: toLatlng,
+    				title: "Destination",
+                    label: labels[1]
+				});
+				fromMarker.setMap(map);
+				toMarker.setMap(map);
+                var markers = [fromMarker, toMarker];//some array
+                var bounds = new google.maps.LatLngBounds();
+                for (var i = 0; i < markers.length; i++) {
+                    bounds.extend(markers[i].getPosition());
+                }
+                map.fitBounds(bounds);
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+	    </script>
+	</head>
+
+	<body>
+		<!-- Header -->
+		<div class="header">
+			<!-- Destination -->
+			<div>
+				<h1> To: </h1>
+			</div>
+			<!-- Start Position -->
+			<div>
+				<h1> From: </h1>
+			</div>
+			<!-- Time -->
+			<div>
+				<h1> Meetup Time: </h1>
+			</div>
+			<!-- Rating -->
+			<div class="rating">
+				<h1> Rating: </h1>
+			</div>
+		</div>
+		<!-- Google Map -->
+		<div class="map">
+			<h1> Map </h1>
+			<div id="greywrap">
+		        <div class="row">
+		            <div class="col-lg-4 callout">
+		                <span class="icon icon-stack"></span>
+		                </div><!-- col-lg-4 -->
+		                <div id="googleMap" style="width:500px;height:380px;"></div>  
+		                <div class="col-lg-4 callout">
+		                    <span class="icon icon-eye"></span>
+		                </div><!-- col-lg-4 --> 
+		                
+		                <div class="col-lg-4 callout">
+		                    <span class="icon icon-heart"></span>
+		                </div><!-- col-lg-4 --> 
+		            </div><!-- row -->
+		        </div><!-- greywrap -->
+		    </div>
+		</div>
+		<!-- General Info -->
+		<div class="info">
+			<!-- Creator -->
+			<div>
+				<h1> Creator: </h1>
+			</div>
+			<!-- Attendees -->
+			<div>
+				<h1> Group Members: </h1>
+			</div>
+			<!-- Description -->
+			<div>
+				<h1> Description: </h1>
+			</div>
+		</div>
+
+	</body>
+</html>
