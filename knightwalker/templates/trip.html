@@ -54,17 +54,21 @@
     <div class="twinkling" style="z-index:0 !important;"></div> 
     <div id = "body">
     <form id="msform">
+    <div class = "row">
+                    <!-- Time -->
+                    <div class = "col-xs-7">
+                        <h6 class = "col-xs-4"> Meeting Time: </h6>
+                        <h6 class = "col-xs-3"> {{ trip.start_time }} </h6>
+                    </div>
     <div style="z-index:1">
         <h2 class = 'title'>FEB 5, 2016, 11:00 PM</h2>
         <div class = 'subtitle'>From: Carnegie Mellon University</div>              
         <div class = 'subtitle'>To: University of Pittsburgh</div>
         <div id="googleMap" style="height:650px;"></div>
-        <div class="rating">
-           <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-        <!-- <div class = 'subtitle'>rating: * * * * *</div>   -->
+
+        <div class = 'subtitle'>rating: * * * * *</div>  
         <div class = 'subtitle'>Creator: emmazzz</div>
-        <div class = 'subtitle'>3 people in group</div>
+        <div class = 'subtitle'>Attendees: lll aaa ayy</div>
         <button type="button" id="join" onclick="send()" class = 'action-button'>JOIN!</button>
     </div>  
     </form>

@@ -34,8 +34,19 @@ function initialize(fromX, fromY, toX, toY, id) {
     for (var i = 0; i < markers.length; i++) {
         bounds.extend(markers[i].getPosition());
     }
+    var butn = document.getElementById("join"+id);
+
+    butn.addEventListener("click", function() {        
+        send(id);
+        butn.disabled = true;
+        butn.innerHTML = "Request sent!"}, false);
+
+    function send(id){
+        console.log(id);
+    };
     map.fitBounds(bounds);
 }
+
 
 $(document).ready(function() {
     $(".google-map-data").each(function() {
