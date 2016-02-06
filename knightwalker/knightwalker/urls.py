@@ -26,4 +26,3 @@ urlpatterns = [
     url(r'^login$', Login.as_view()),
     url(r'where_to_go', WhereToGoPage.as_view()),
 ]
->>>>>>> b6595bf78e317bbe66c6686a656d989a1e2b1a63
