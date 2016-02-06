@@ -14,10 +14,13 @@ class HomePage(View):
 			ud.save()
 		return render(request, 'home.html')
 
+class Trip(View):
+	def get(self,request):
+		return render(request, 'trip.html')
+		
 class WhereToGoPage(View):
 	def get(self, request):
 		return render(request, 'where_to_go_3.0.html')
-
 class Login(View):
 	def get(self, request):
 		return render(request, 'login.html')
