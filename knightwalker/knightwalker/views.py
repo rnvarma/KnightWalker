@@ -34,7 +34,7 @@ class WhereToGoPage(View):
 			description = request.POST.get("description")
 		)
 		trip.save()
-		return HttpResponseRedirect("/trip/%d" % trip.id)
+		return HttpResponseRedirect("/recommendList")
 
 class Login(View):
 	def get(self, request):

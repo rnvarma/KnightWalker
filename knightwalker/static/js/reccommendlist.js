@@ -49,7 +49,7 @@ function initialize(fromX, fromY, toX, toY, id) {
         if (joined) {
             joinGroup();
             chatbutn.innerHTML = 
-            "<button type='button' id='chatbutn{{trip.id}}'' class = 'col-xs-3 action-button'>CHAT!</button>";
+            "<button type='button' id='chatbutn{{trip.id}}'' class = 'col-xs-6 action-button'>CHAT!</button>";
             // var cbutton = document.getElementById("chatbutn"+id);
             chatbutn.addEventListener("click",function(){
                 console.log("sup");

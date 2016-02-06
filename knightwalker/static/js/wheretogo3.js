@@ -11,6 +11,8 @@ $(function() {
 	var left, opacity, scale; //fieldset properties which we will animate
 	var animating; //flag to prevent quick multi-click glitches
 
+
+
 	$(".next").click(function(){
 	
 		if(animating) return false;
@@ -105,11 +107,19 @@ $(function() {
 			easing: 'easeInOutBack'
 		});
 	});
+    var subbutn = document.getElementById("submit");
+    subbutn.addEventListener("click",function(){
+        window.location.href = "/recommendList";
+    });
+    
 
-	$(".submit").click(function(){
-		x = document.getElementById("msform");
-	    text2 = x.elements[11].value;
-	    $("#description").val(text2);
-	})
+	// $(".submit").click(function(){
+	// 	x = document.getElementById("msform");
+	//     text2 = x.elements[11].value;
+	//     $("#description").val(text2);
+
+	// })
+
+
 
 });

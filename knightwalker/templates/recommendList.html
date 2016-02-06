@@ -16,12 +16,12 @@
 				<div class = "row">
 					<!-- Time -->
 					<div class = "col-xs-6">
-						<h6 class = "col-xs-4"> Meeting Time: </h6>
-						<h6 class = "col-xs-2"> {{ trip.start_time }} </h6>
+						<h4 class = "col-xs-4"> Meeting Time: </h4>
+						<h4 class = "col-xs-2"> {{ trip.start_time }} </h4>
 					</div>
 					<!-- Rating -->
 					<div class= "col-xs-6 rating">
-						<h6 class = "col-xs-3"> Group Rating: </h6>
+						<h4 class = "col-xs-3"> Group Rating: </h4>
 						<img src = "http://www.iconsplace.com/icons/preview/white/knight-256.png" style="width:64px;height:40px;"class = "col-xs-3">  
 					</div>
 				</div>
@@ -29,10 +29,10 @@
 				<!-- Description -->
 				<div class = "row">
 					<div class = "col-xs-12">
-						<h6 class = "col-xs-4"> Description: </h6>
+						<h4 class = "col-xs-4"> Description: </h4>
 						<div class = "col-xs-8">
-							<h6 class = "col-xs-3"> Creator: </h6>
-							<h6 class = "col-xs-5"> {{ trip.creator.name }} </h6>
+							<h4 class = "col-xs-3"> Creator: </h4>
+							<h4 class = "col-xs-5"> {{ trip.creator.name }} </h4>
 						</div>
 					</div>
 				</div>
@@ -40,15 +40,13 @@
 				<div class = "row">
 					<div class = "col-xs-12">
 					    <!-- Creator -->
-					    <h6> {{ trip.description }} </h6>
+					    <h4> {{ trip.description }} </h4>
 				    </div>
 				</div>	
 			    <!-- Attendees -->
 				<div class = "col-xs-12 row">
-					<h6 class = "col-xs-3"> Attendees: </h6>
-					<h6 class = "col-xs-6"> lalalal,yyyy </h6>
-					<button type="button" id="join{{trip.id}}" class = 'col-xs-3 action-button'>JOIN!</button>
-					<div id = "chat{{trip.id}}"></div>
+					<button type="button" id="join{{trip.id}}" class = 'col-xs-6 action-button'>JOIN!</button>
+					<div class = "col-xs-6" id = "chat{{trip.id}}"></div>
 				</div>
 			</div>
 
