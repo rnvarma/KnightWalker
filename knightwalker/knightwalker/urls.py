@@ -24,5 +24,11 @@ urlpatterns = [
     url('', include('social.apps.django_app.urls', namespace='social')),
     url(r'^$', login_required(HomePage.as_view())),
     url(r'^login$', Login.as_view()),
+<<<<<<< HEAD
     url(r'^trip$', Trip.as_view())
 ]
+=======
+    url(r'where_to_go', WhereToGoPage.as_view()),
+]
+>>>>>>> b6595bf78e317bbe66c6686a656d989a1e2b1a63
+>>>>>>> 235121b54d6ab400559a2583142bf44b8b927aa3
