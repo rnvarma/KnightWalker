@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="stars" style="z-index:0;"></div>
+<div class="twinkling" style="z-index:0;"></div>
+
+	<div class="row" style="z-index:99999;">
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+			<div class="login-area">
+				<div class="title">
+					Verify you are a Tartan by
+				</div>
+				<form class="login-form">
+					<a href="{% url 'social:begin' 'google-oauth2' %}" class="google google-btn btn btn-default"><i class="fa fa-google-plus"></i>Signing in with Andrew</a></li>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
