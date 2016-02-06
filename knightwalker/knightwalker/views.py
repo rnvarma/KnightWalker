@@ -60,7 +60,9 @@ class RecommendList(View):
 		context["trip_list"] = trips_data
 		return render(request, 'recommendList.html', context)
 
-
+class Chat(View):
+	def get(self, request):
+		return render(request, 'chat.html')
 
 
 
