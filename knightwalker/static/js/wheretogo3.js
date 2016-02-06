@@ -33,14 +33,14 @@ $(function() {
 
         else if ($("fieldset").index(current_fs) == 2){
         	x = document.getElementById("msform");
-		    text1 = x.elements[6].value;	
+		    text1 = x.elements[7].value;
 		    $("#departure_time").val(text1);        	
 	    }
 
         else if ($("fieldset").index(current_fs) == 3){
         	x = document.getElementById("msform");
-		    text2 = x.elements[9].value + "<br>";
-		    $("#description").val(text2)
+		    text2 = x.elements[11].value;
+		    $("#description").val(text2);
         }
 
 		//activate next step on progressbar using the index of next_fs
@@ -106,17 +106,10 @@ $(function() {
 		});
 	});
 
-	// $(".submit").click(function(){
-	// 	x = document.getElementById("msform");
-	// 	text2 = x.elements[10].value + "<br>";
-	// 	document.write(start_lat);
-	// 	document.write(start_lng);
-	// 	document.write(dest_lat);
-	// 	document.write(dest_lng);
-	// 	document.write(text1);
-	// 	 document.write(text2);
-		
-	// 	return false;
-	// })
+	$(".submit").click(function(){
+		x = document.getElementById("msform");
+	    text2 = x.elements[11].value;
+	    $("#description").val(text2);
+	})
 
 });
