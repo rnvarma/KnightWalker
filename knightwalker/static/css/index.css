@@ -30,7 +30,7 @@
 
 .google-btn {
 	width: 100%;
-	background: black;
+	background: transparent;
     color: white;
     font-size: 200%;
     font-weight: 100;
@@ -38,7 +38,7 @@
 
 .make-trip-btn {
 	width: 100%;
-	background: black;
+	background: transparent;
     color: white;
     font-size: 200%;
     font-weight: 100;
@@ -95,7 +95,12 @@ http://www.Mkrtchyan.zz.mu
   height:100%;
   display:block;
 }
-
+body {
+  background-image: url("http://s2.postimg.org/9wk75xy2t/Knight_Walker_2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index:0;
+}
 .stars {
   background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
   z-index:0;

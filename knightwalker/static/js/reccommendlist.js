@@ -39,24 +39,33 @@ function initialize(fromX, fromY, toX, toY, id) {
     var butn = document.getElementById("join"+id);
 
     butn.addEventListener("click", function() {        
-        send(id);
         joined = !joined;
         if (joined) butn.innerHTML = "LEAVE";
         else butn.innerHTML = "JOIN!";
-        updateButn();}, false);
+        update();}, false);
 
-    function updateButn(){
+    function update(){
         var chatbutn = document.getElementById("chat"+id);
         if (joined) {
+            joinGroup();
             chatbutn.innerHTML = 
             "<button type='button' id='chatbutn{{trip.id}}'' class = 'col-xs-3 action-button'>CHAT!</button>";
+            // var cbutton = document.getElementById("chatbutn"+id);
+            chatbutn.addEventListener("click",function(){
+                console.log("sup");
+                window.location.href = "/chat";
+            })
         }
         else {
+            leaveGroup();
             chatbutn.innerHTML = "";
         }
     };
-    function send(id){
+    function joinGroup(){
         console.log(id);
+    };
+    function leaveGroup(){
+
     };
     map.fitBounds(bounds);
 }
