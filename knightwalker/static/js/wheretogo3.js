@@ -1,3 +1,9 @@
+var lat
+var lng
+var time
+var description
+var text1, text2
+var x
 $(function() {
 
 	//jQuery time
@@ -6,11 +12,34 @@ $(function() {
 	var animating; //flag to prevent quick multi-click glitches
 
 	$(".next").click(function(){
+	
 		if(animating) return false;
 		animating = true;
 
 		current_fs = $(this).parent();
 		next_fs = $(this).parent().next();
+
+		lat = marker.getPosition().lat();
+        lng = marker.getPosition().lng();
+        if ($("fieldset").index(current_fs) == 0) {
+        	start_lat = lat;
+            start_lng = lng;
+        }
+        	
+        else if ($("fieldset").index(current_fs) == 1){
+        	dest_lat = lat;
+            dest_lng = lng;
+        }
+
+        else if ($("fieldset").index(current_fs) == 2){
+        	x = document.getElementById("msform");
+		    text1 = x.elements[6].value + "<br>";	        	
+	    }
+
+        else if ($("fieldset").index(current_fs) == 3){
+        	x = document.getElementById("msform");
+		    text2 = x.elements[9].value + "<br>";
+        }
 
 		//activate next step on progressbar using the index of next_fs
 		$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
@@ -76,6 +105,15 @@ $(function() {
 	});
 
 	$(".submit").click(function(){
+		x = document.getElementById("msform");
+		text2 = x.elements[10].value + "<br>";
+		document.write(start_lat);
+		document.write(start_lng);
+		document.write(dest_lat);
+		document.write(dest_lng);
+		document.write(text1);
+		 document.write(text2);
+		
 		return false;
 	})
 
