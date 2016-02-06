@@ -20,5 +20,6 @@ from knightwalker.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomePage.as_view())
+    url(r'^$', HomePage.as_view()),
+    url(r'where_to_go', WhereToGoPage.as_view())
 ]
