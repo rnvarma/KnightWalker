@@ -5,7 +5,4 @@ from backend.models import *
 
 class HomePage(View):
 	def get(self, request):
-		posts = Posts.objects.all()
-		context = {}
-		context["posts"] = posts
-		return render(request, 'index.html', context)
+		return render(request, 'index.html')
