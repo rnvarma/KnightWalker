@@ -13,13 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.auth.decorators import login_required
 
 from knightwalker.views import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', HomePage.as_view()),
-    url(r'where_to_go', WhereToGoPage.as_view())
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^$', login_required(HomePage.as_view())),
+    url(r'^login$', Login.as_view()),
+    url(r'where_to_go', WhereToGoPage.as_view()),
 ]
+>>>>>>> b6595bf78e317bbe66c6686a656d989a1e2b1a63
