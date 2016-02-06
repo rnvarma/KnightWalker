@@ -5,6 +5,7 @@ function initialize(fromX, fromY, toX, toY, id) {
     console.log(toX)
     console.log(toY)
     // console.log(description)
+    var joined = false;
     var centerX = (fromX + toX)/2;
     var centerY = (fromY + toY)/2;
     var fromLatlng = new google.maps.LatLng(fromX, fromY);
@@ -39,9 +40,21 @@ function initialize(fromX, fromY, toX, toY, id) {
 
     butn.addEventListener("click", function() {        
         send(id);
-        butn.disabled = true;
-        butn.innerHTML = "Request sent!"}, false);
+        joined = !joined;
+        if (joined) butn.innerHTML = "LEAVE";
+        else butn.innerHTML = "JOIN!";
+        updateButn();}, false);
 
+    function updateButn(){
+        var chatbutn = document.getElementById("chat"+id);
+        if (joined) {
+            chatbutn.innerHTML = 
+            "<button type='button' id='chatbutn{{trip.id}}'' class = 'col-xs-3 action-button'>CHAT!</button>";
+        }
+        else {
+            chatbutn.innerHTML = "";
+        }
+    };
     function send(id){
         console.log(id);
     };
