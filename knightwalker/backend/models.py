@@ -15,7 +15,7 @@ class UserData(models.Model):
 	avg_rating = models.FloatField(default=0)
 
 class Trip(models.Model):
-	departure_time = models.DateTimeField(null=True, blank=True)
+	departure_time = models.TimeField(null=True, blank=True)
 	start_lat = models.FloatField(default=0)
 	start_lon = models.FloatField(default=0)
 	dest_lat = models.FloatField(default=0)
